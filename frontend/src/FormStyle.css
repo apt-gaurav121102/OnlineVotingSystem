@@ -1,0 +1,328 @@
+/* 🌫 Smoky Dark Background */
+body {
+  background: radial-gradient(circle at 20% 20%, #1a1a1a, #0d0d0f, #000000);
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+/* Animated smoke-like overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.06), transparent 70%),
+              radial-gradient(circle at 70% 70%, rgba(0,255,255,0.04), transparent 70%);
+  background-blend-mode: overlay;
+  animation: smokeFloat 12s ease-in-out infinite alternate;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes smokeFloat {
+  0% { transform: translate(0, 0); opacity: 0.8; }
+  100% { transform: translate(20px, -20px); opacity: 1; }
+}
+
+/* Common page container */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* 💠 Transparent glassy forms and dashboards */
+.form-box,
+.dashboard-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 180, 255, 0.2);
+  box-shadow:
+    0 0 20px rgba(0, 180, 255, 0.15),
+    inset 0 0 8px rgba(255, 255, 255, 0.05);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-box:hover,
+.dashboard-box:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 30px rgba(0, 180, 255, 0.25),
+    0 0 45px rgba(0, 120, 255, 0.15);
+}
+
+/* Headings */
+.form-box h2,
+.form-box h3,
+.dashboard-box h3 {
+  color: #00ccff;
+  text-shadow: 0 0 12px rgba(0, 200, 255, 0.7);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Inputs */
+.form-box input,
+.form-box select,
+.form-box textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(0, 150, 255, 0.3);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #e3f2fd;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-box input:focus,
+.form-box select:focus,
+.form-box textarea:focus {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 12px rgba(0, 174, 255, 0.6);
+  border-color: #00bfff;
+}
+
+.form-box input::placeholder,
+.form-box textarea::placeholder {
+  color: #a6d8ff;
+}
+
+/* 🌈 Softer Action Buttons (Login / Signup / Vote / Submit) */
+button,
+.btn,
+.form-box button {
+  background: linear-gradient(90deg, #004aad, #007bff);
+  border: none;
+  color: #ffffff !important;
+  font-weight: 500;
+  border-radius: 10px !important;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 0 12px rgba(0, 150, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+.form-box button:hover {
+  background: linear-gradient(90deg, #007bff, #00aaff);
+  box-shadow: 0 0 25px rgba(0, 174, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Delete button */
+.btn-danger {
+  background: rgba(255, 0, 70, 0.7) !important;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: rgba(255, 0, 70, 0.9) !important;
+  box-shadow: 0 0 20px rgba(255, 0, 70, 0.6);
+}
+
+/* Dashboard cards */
+.card {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(15px);
+  border-radius: 15px !important;
+  border: 1px solid rgba(0, 255, 255, 0.25) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.25) !important;
+  color: #e0f7fa !important;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 28px rgba(0, 255, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+/* 🖤 Neon Black Glass Navbar */
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.custom-navbar:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
+}
+
+/* Navbar brand */
+.custom-navbar .navbar-brand {
+  color: #00e0ff !important;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.custom-navbar .navbar-brand:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 1);
+}
+
+/* Navbar links */
+.custom-navbar .nav-link {
+  color: #cceeff !important;
+  margin: 0 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #00e0ff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+  transform: translateY(-1px);
+}
+
+/* Logout button */
+.custom-navbar .btn-outline-secondary {
+  border: 1px solid #00e0ff !important;
+  color: #00e0ff !important;
+  background: transparent;
+  transition: 0.3s ease;
+}
+
+.custom-navbar .btn-outline-secondary:hover {
+  background: #00bfff !important;
+  color: #000 !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+/* 🌌 Admin Dashboard Table Styling */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  color: #e0f7fa;
+}
+
+/* Table Header */
+table thead {
+  background: linear-gradient(90deg, #002b4d, #003d66, #005c99);
+  color: #00eaff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+table thead th {
+  padding: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  text-align: center;
+}
+
+/* Table Rows */
+table tbody tr {
+  border-bottom: 1px solid rgba(0, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+table tbody td {
+  padding: 0.8rem;
+  text-align: center;
+  color: #cceeff;
+}
+
+/* Table Corners */
+table tr:first-child th:first-child {
+  border-top-left-radius: 12px;
+}
+table tr:first-child th:last-child {
+  border-top-right-radius: 12px;
+}
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+/* Buttons inside Table */
+table button {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Edit Button */
+table button:not(.btn-danger) {
+  background: linear-gradient(90deg, #004aad, #007bff);
+  border: none;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 174, 255, 0.25);
+}
+table button:not(.btn-danger):hover {
+  background: linear-gradient(90deg, #007bff, #00bfff);
+  box-shadow: 0 0 20px rgba(0, 174, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Delete Button */
+.btn-danger {
+  background: rgba(255, 0, 70, 0.7) !important;
+  border: none;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 0, 70, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-danger:hover {
+  background: rgba(255, 0, 70, 0.9) !important;
+  box-shadow: 0 0 25px rgba(255, 0, 70, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Create Candidate Button */
+.mb-3 button {
+  background: linear-gradient(90deg, #004aad, #00bfff);
+  box-shadow: 0 0 15px rgba(0, 174, 255, 0.4);
+  transition: all 0.3s ease;
+}
+.mb-3 button:hover {
+  background: linear-gradient(90deg, #00bfff, #007bff);
+  box-shadow: 0 0 25px rgba(0, 174, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* 🧊 Modal Styling */
+.modal-content {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  color: #e0f7fa;
+  border-radius: 12px;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: rgba(0, 255, 255, 0.15);
+}
+
+.modal-title {
+  color: #00e0ff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
